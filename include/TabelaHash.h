@@ -13,21 +13,22 @@ class TabelaHash
 private:
     char function_hash_type;
     int m;
-    vector<ListaDupla> tabela;
+    int colisoes;
+    vector<int> dadosEscolhidos;
+    vector<ListaDupla*> tabela;
 public:
-
     TabelaHash();
-    int hashDivisao(int k, int m);
-    int hashMultiplicacao(int k, int m);
-    int minhaHash(int k, int m);
+    int hashDivisao(int k);
+    int hashMultiplicacao(int k);
+    int minhaHash(int k);
     
     void create(int m, char function_hash_name);
-    NoDuplo* insert(int key, int data);
-    int* lookup(int key, int data);
-    
     void destroy();
+    NoDuplo* insert(int key, int data);
+    NoDuplo* lookup(int key, int data);
+    
+    int getColisoes();
+    void imprimeTabela();
 };
-
-
 
 #endif

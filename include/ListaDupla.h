@@ -7,15 +7,9 @@ class ListaDupla
 public:
     ListaDupla();
     ~ListaDupla();
-    bool busca(int val);
     NoDuplo* get(int k);
-    void set(int k, int val);
-    void insereInicio(int val);
-    void removeInicio();
-    void insereFinal(int val); 
-    void removeFinal();        
+    NoDuplo * insereFinal(int val);       
     void imprime();
-    void imprimeReverso();
 
 private:
     NoDuplo *primeiro;
